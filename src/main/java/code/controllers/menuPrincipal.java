@@ -49,6 +49,16 @@ public class menuPrincipal {
         main.setRoot("paginaSeleccionUsuario");
     }
 
+    public void abirirAlimentosAdmin() {
+        containerState.getChildren().clear();
+        labelSeccionActual.setText("Administrador");
+        labelSeccionActual.setPadding(new Insets(0,20,0,60));
+
+        containerState.getChildren().add( extraerComponente("AlimentosAdministrador") );
+
+
+    }
+
     public void infoMenuP(){
         informarAccionBoton(0);
     }
@@ -76,7 +86,7 @@ public class menuPrincipal {
             case 1 -> textInfoAccion.setText("Presione para poder observar su lista de compras ");
             case 2 -> textInfoAccion.setText("Presione para poder observar la lista de alimentos disponibles en los compartimentos, ademas de poder agregar o conusmir alimentos ");
             case 3 -> textInfoAccion.setText("Presione para agregar o eliminar contenedores del administrador");
-            case 4 -> textInfoAccion.setText("Presione para poder observar la lista por semana o modificarla");
+            case 4 -> textInfoAccion.setText("Presione para poder agregar o eliminar alimentos del administrador");
             case 5 -> textInfoAccion.setText("Presione para poder agregar,cambiar o eliminar a los usuarios dentro del admonistrador");
             case 6 -> textInfoAccion.setText("Presione para cerrar secion :)");
 

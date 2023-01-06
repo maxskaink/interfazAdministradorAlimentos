@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane prefHeight="235.0" prefWidth="192.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.controllers.formularioCrearAlimentosAdmin">
+  <columnConstraints>
+    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints maxHeight="74.0" minHeight="0.0" prefHeight="43.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="157.0" minHeight="10.0" prefHeight="115.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="123.0" minHeight="10.0" prefHeight="69.0" valignment="CENTER" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <VBox alignment="CENTER" spacing="10.0" GridPane.rowIndex="1">
+         <children>
+            <Label style="-fx-background-color: #012E40; -fx-background-radius: 3;" text="Nombre:" textFill="#f2e3d5">
+               <padding>
+                  <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldNombre" alignment="CENTER" blendMode="DARKEN" style="-fx-background-color: #edd8c4; -fx-border-width: 1; -fx-border-color: #012E40; -fx-border-radius: 5;" />
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <Label style="-fx-background-color: #012E40; -fx-background-radius: 3;" text="Categoria:" textFill="#f2e3d5">
+               <padding>
+                  <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldCategoria" alignment="CENTER" blendMode="DARKEN" style="-fx-background-color: #edd8c4; -fx-border-width: 1; -fx-border-color: #012E40; -fx-border-radius: 5;" GridPane.columnIndex="1" />
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </VBox>
+      <Button mnemonicParsing="false" onMouseClicked="#cancelarFormulario" style="-fx-background-color: #3CA6A6;" text="Cancelar" GridPane.rowIndex="2">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button mnemonicParsing="false" onMouseClicked="#agregarAlimento" style="-fx-background-color: #3CA6A6;" text="Agregar" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="labelErrores" prefHeight="21.0" prefWidth="94.0" />
+   </children>
+</GridPane>

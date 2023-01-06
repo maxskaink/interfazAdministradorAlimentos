@@ -12,10 +12,11 @@ import java.io.IOException;
 public class main extends Application {
     public static administradorAlimentos adminApp;
     public static Scene paginaPrincipal;
+    public static Stage stage;
     @Override
 
     public void start(Stage stage) throws IOException {
-
+        main.stage = stage;
         adminApp = new administradorAlimentos();
 
         paginaPrincipal = cargarFXML("paginaSeleccionUsuario");

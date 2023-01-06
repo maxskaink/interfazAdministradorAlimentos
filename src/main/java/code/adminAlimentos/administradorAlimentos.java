@@ -50,7 +50,7 @@ public class administradorAlimentos {
     public void borrarAlimentosAdministrador(String nombreAlimento){
         int i;
 
-        for(i= 0; i< (AlimentosDisponibles.size()-1); i++){
+        for(i= 0; i< (AlimentosDisponibles.size()); i++){
             if(AlimentosDisponibles.get(i).getNombre().equals(nombreAlimento)){
                 AlimentosDisponibles.remove(i);
             }
