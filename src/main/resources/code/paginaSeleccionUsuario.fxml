@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #F2E3D5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.controllers.paginaSeleccionUsuario">
+   <padding>
+      <Insets top="15.0" />
+   </padding>
+   <children>
+      <VBox alignment="CENTER" layoutX="452.0" layoutY="124.0" prefHeight="720.0" prefWidth="1080.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="310.0" prefWidth="1080.0" spacing="50.0">
+               <children>
+                  <ImageView blendMode="DARKEN" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/frutas.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="Usuarios" textFill="#348888">
+                     <font>
+                        <Font name="Segoe UI Bold" size="60.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox fx:id="containerUser" alignment="TOP_CENTER" prefHeight="482.0" prefWidth="1080.0" spacing="20.0" style="-fx-border-radius: 10; -fx-background-color: #024959; -fx-background-radius: 50 50 0 0;">
+               <padding>
+                  <Insets bottom="10.0" left="30.0" right="30.0" top="15.0" />
+               </padding>
+               <children>  
+                  <HBox prefHeight="150.0" prefWidth="970.0" spacing="10.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="120.0" prefWidth="204.0" spacing="10.0" style="-fx-background-radius: 20; -fx-background-color: #22BABB; -fx-border-width: 2; -fx-border-color: black; -fx-border-radius: 20;">
+                           <children>
+                              <Label text="Usuario 1" textFill="WHITE">
+                                 <font>
+                                    <Font name="Britannic Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                              <ImageView blendMode="SRC_ATOP" fitHeight="96.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/hombre.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <opaqueInsets>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </opaqueInsets>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="S_RESIZE" />
+                     </cursor>
+                  </HBox>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="S_RESIZE" />
+               </cursor>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
