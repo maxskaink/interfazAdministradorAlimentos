@@ -5,9 +5,11 @@ import code.adminAlimentos.Contenedor;
 import code.adminAlimentos.miError;
 import code.main;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -15,6 +17,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class componenteAlimentosDisponibles {
@@ -66,5 +69,19 @@ public class componenteAlimentosDisponibles {
             containerEspacios.getChildren().add(contenedorHBOX);
         } );
 
+    }
+
+    public void agregarAlimento(){
+
+        containerEspacios.getChildren().clear();
+
+        containerEspacios.getChildren().add( extraerFormulario("crearAlimentoContenedor") );
+
+    }
+    private GridPane extraerFormulario(String nombreComponente){
+        FXMLLoader loader = (new FXMLLoader(main.class.getResource("formularios/"+ nombreComponente + ".fxml")));
+        try {
+            return loader.load();
+        } catch (IOException e) {throw new RuntimeException(e);}
     }
 }

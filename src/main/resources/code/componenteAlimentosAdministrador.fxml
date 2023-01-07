@@ -28,13 +28,19 @@
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </Button>
                      </children>
                      <padding>
                         <Insets top="5.0" />
                      </padding>
                   </HBox>
-                  <Label fx:id="labelErrores" prefHeight="21.0" prefWidth="533.0" style="-fx-background-color: #F2E3D5;" />
+                  <Label fx:id="labelErrores" alignment="CENTER" prefHeight="21.0" prefWidth="533.0" style="-fx-background-color: #F2E3D5;" text="" textOverrun="CENTER_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
                   <VBox fx:id="containerEspacios" alignment="TOP_CENTER" prefHeight="385.0" prefWidth="192.0" spacing="10.0" style="-fx-background-color: #F2E3D5;">
                      <padding>
                         <Insets left="50.0" right="50.0" top="20.0" />

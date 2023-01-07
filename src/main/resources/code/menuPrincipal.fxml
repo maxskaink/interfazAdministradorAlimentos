@@ -33,6 +33,9 @@
                <padding>
                   <Insets left="20.0" right="20.0" />
                </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Label>
             <VBox prefHeight="415.0" prefWidth="297.0" spacing="15.0" style="-fx-border-width: 1 0 2 0; -fx-border-color: #012E40;" GridPane.rowIndex="1">
                <children>
@@ -43,6 +46,9 @@
                      <font>
                         <Font name="Modern No. 20" size="20.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Label>
                   <Label fx:id="menuButton2" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onMouseClicked="#abrirAlimentosDisponibles" onMouseMoved="#infoBoton2" style="-fx-background-color: #024959; -fx-background-radius: 10;" text="Alimentos disponibles" textFill="#f2e3d5">
                      <font>
@@ -51,14 +57,20 @@
                      <padding>
                         <Insets bottom="8.0" left="10.0" right="10.0" top="8.0" />
                      </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Label>
-                  <Label fx:id="menuButton3" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onMouseMoved="#infoBoton3" style="-fx-background-color: #024959; -fx-background-radius: 10;" text="Administrar contenedores" textFill="#f2e3d5">
+                  <Label fx:id="menuButton3" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onMouseClicked="#abrirContenedores" onMouseMoved="#infoBoton3" style="-fx-background-color: #024959; -fx-background-radius: 10;" text="Administrar contenedores" textFill="#f2e3d5">
                      <font>
                         <Font name="Modern No. 20" size="20.0" />
                      </font>
                      <padding>
                         <Insets bottom="8.0" left="10.0" right="10.0" top="8.0" />
                      </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Label>
                   <Label fx:id="menuButton4" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onMouseClicked="#abirirAlimentosAdmin" onMouseMoved="#infoBoton4" style="-fx-background-color: #024959; -fx-background-radius: 10;" text="Alimentos administrador" textFill="#f2e3d5">
                      <font>
@@ -67,6 +79,9 @@
                      <padding>
                         <Insets bottom="8.0" left="10.0" right="10.0" top="8.0" />
                      </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Label>
                   <Label fx:id="menuButton5" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onMouseMoved="#infoBoton5" style="-fx-background-color: #024959; -fx-background-radius: 10;" text="Administrar Usuarios" textFill="#f2e3d5">
                      <font>
@@ -75,6 +90,9 @@
                      <padding>
                         <Insets bottom="8.0" left="10.0" right="10.0" top="8.0" />
                      </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Label>
                   <Text fx:id="textInfoAccion" strokeType="OUTSIDE" strokeWidth="0.0" text="Por favor seleccione la accion de usuario que desea realizar." wrappingWidth="242.4208984375">
                      <font>
@@ -89,13 +107,10 @@
                   <Insets bottom="20.0" left="30.0" right="30.0" top="30.0" />
                </GridPane.margin>
             </VBox>
-            <Label fx:id="labelSeccionActual" contentDisplay="CENTER" graphicTextGap="6.0" prefHeight="129.0" prefWidth="464.0" style="-fx-background-color: #026773; -fx-background-radius: 0 0 20 20; -fx-border-width: 0 2 2 2; -fx-border-color: #012E40; -fx-border-radius: 0 0 20 20;" text="Inicio" textFill="#f2e3d5" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="1">
+            <Label fx:id="labelSeccionActual" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" prefHeight="129.0" prefWidth="464.0" style="-fx-background-color: #026773; -fx-background-radius: 0 0 20 20; -fx-border-width: 0 2 2 2; -fx-border-color: #012E40; -fx-border-radius: 0 0 20 20;" text="Inicio" textFill="#f2e3d5" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="1">
                <font>
                   <Font name="Kristen ITC" size="46.0" />
                </font>
-               <padding>
-                  <Insets left="170.0" right="20.0" />
-               </padding>
             </Label>
             <Label fx:id="labelErrores" prefHeight="39.0" prefWidth="550.0" text="Codigo hecho por Miguel calmabas (Max Skaink)" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
@@ -109,8 +124,11 @@
                <image>
                   <Image url="@../img/logoUsuario2.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
-            <Pane fx:id="containerState" prefHeight="445.0" prefWidth="730.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Pane fx:id="containerState" prefHeight="445.0" prefWidth="752.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>

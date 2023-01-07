@@ -25,12 +25,7 @@
                <children>
                   <HBox alignment="TOP_CENTER" prefHeight="59.0" prefWidth="561.0" spacing="100.0" style="-fx-border-color: #024959; -fx-border-width: 0 0 1 0; -fx-border-radius: 50;">
                      <children>
-                        <Button mnemonicParsing="false" style="-fx-background-color: #026773; -fx-border-color: black; -fx-border-radius: 2;" text="Agregar alimentos" textFill="#f2e3d5">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" style="-fx-background-color: #026773; -fx-border-color: black; -fx-border-radius: 2;" text="Consumir alimentos" textFill="#f2e3d5">
+                        <Button mnemonicParsing="false" onMouseClicked="#agregarAlimento" style="-fx-background-color: #026773; -fx-border-color: black; -fx-border-radius: 2;" text="Agregar alimentos" textFill="#f2e3d5">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>

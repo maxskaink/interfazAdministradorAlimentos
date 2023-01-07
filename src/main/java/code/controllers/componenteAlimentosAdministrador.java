@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
@@ -60,6 +61,10 @@ public class componenteAlimentosAdministrador {
                 Label alimentoLabel = new Label("- "+ alimento.getNombre() + " Categoria:: " + alimento.getCategoria());
 
                 alimentoLabel.setFont( Font.font("Berlin Sans FB", 15));
+                alimentoLabel.setCursor(Cursor.HAND);
+                alimentoLabel.setOnMouseMoved(e->{
+                    labelErrores.setText("Presione para eliminar el alimento del administrador");
+                });
 
                 alimentoLabel.setOnMouseClicked( a ->{
                     try{

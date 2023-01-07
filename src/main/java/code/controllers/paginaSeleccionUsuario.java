@@ -16,6 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
+import javafx.scene.text.TextAlignment;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -72,6 +73,7 @@ public class paginaSeleccionUsuario {
                 Label nombreUsuario = new Label(usuarios.get(contadorUsuarios));
                 nombreUsuario.setTextFill(Color.WHITE);
                 nombreUsuario.setFont(Font.font("Britannic Bold", 26));
+                nombreUsuario.setTextAlignment(TextAlignment.CENTER);
 
                 ImageView imagenUsuario = new ImageView();
                 imagenUsuario.setBlendMode(BlendMode.SRC_ATOP);

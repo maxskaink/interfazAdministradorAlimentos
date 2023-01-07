@@ -74,7 +74,7 @@
                   </HBox>
                </children>
                <cursor>
-                  <Cursor fx:constant="S_RESIZE" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
             </VBox>
          </children>

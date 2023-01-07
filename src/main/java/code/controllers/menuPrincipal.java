@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 
 import java.io.IOException;
 
@@ -18,6 +19,10 @@ public class menuPrincipal {
     public Pane containerState;
     public Label labelSeccionActual;
     public Text textInfoAccion;
+
+    public void initialize() {
+        labelSeccionActual.setTextAlignment(TextAlignment.CENTER);
+    }
     private GridPane extraerComponente(String nombreComponente){
         FXMLLoader loader = (new FXMLLoader(main.class.getResource("componente"+nombreComponente + ".fxml")));
         try {
@@ -27,7 +32,6 @@ public class menuPrincipal {
     public void abrirListaCompras(){
         containerState.getChildren().clear();
         labelSeccionActual.setText("Lista Compras");
-        labelSeccionActual.setPadding(new Insets(0,20,0,60));
 
         containerState.getChildren().add( extraerComponente("ListaCompras") );
 
@@ -35,9 +39,15 @@ public class menuPrincipal {
     public void abrirAlimentosDisponibles(){
         containerState.getChildren().clear();
         labelSeccionActual.setText("Alimentos");
-        labelSeccionActual.setPadding(new Insets(0,20,0,60));
 
         containerState.getChildren().add( extraerComponente("AlimentosDisponibles") );
+
+    }
+    public void abrirContenedores(){
+        containerState.getChildren().clear();
+        labelSeccionActual.setText("Contenedores");
+
+        containerState.getChildren().add( extraerComponente("Contenedores"));
 
     }
     public void regresarMenuPrincipal(){
@@ -52,7 +62,6 @@ public class menuPrincipal {
     public void abirirAlimentosAdmin() {
         containerState.getChildren().clear();
         labelSeccionActual.setText("Administrador");
-        labelSeccionActual.setPadding(new Insets(0,20,0,60));
 
         containerState.getChildren().add( extraerComponente("AlimentosAdministrador") );
 
