@@ -40,9 +40,6 @@ public class main extends Application {
     }
 }
 
-//TODO boton para cerrar cesion
-//TODO accion para consumir y agregar alimentos
-//TODO accion para agregar o eliminar contenedores
-//TODO accion para administrar los alimentos del administrador
+//TODO validar los permisos del administrador
 //TODO accion para administrar Usuarios
 //TODO accion para administrar la lista por semana y tambien para ver la lista de compra

@@ -1,5 +1,6 @@
 package code.controllers;
 
+import code.adminAlimentos.Alimento;
 import code.adminAlimentos.Usuario;
 import code.adminAlimentos.administradorAlimentos;
 import code.main;
@@ -65,6 +66,13 @@ public class paginaSeleccionUsuario {
                     adminApp.iniciarSecion(finalContador);
                     try {
                         main.setRoot("menuPrincipal");
+
+                        //TODO borrar esto
+
+                        main.adminApp.agregarContenedor("Nevera");
+                        main.adminApp.agregarAlimentoAdministrador(new Alimento("manzana", "fruta", 0));
+                        main.adminApp.getContenedores().get(0).agregarAlimento(new Alimento("manzana", "fruta", 15));
+
                     } catch (IOException e) {
 
                     }
