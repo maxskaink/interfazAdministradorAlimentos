@@ -13,19 +13,11 @@ public class administradorAlimentos {
     private Usuario usuarioEnSecion;
 
     public administradorAlimentos(){
-        this.usuarios.add( new Administrador("...",0,99));
+        this.usuarios.add( new Administrador("UsuarioAdmin",0,99));
     }
 
     public void iniciarSecion(int posicionUsuario){
         this.usuarioEnSecion = usuarios.get(posicionUsuario);
-    }
-    public void iniciarSecion(String nombre){
-        for (Usuario usuario : this.usuarios) {
-            if(usuario.getNombre().equals(nombre)){
-                this.usuarioEnSecion = usuario;
-                return;
-            }
-        }
     }
 
     public ArrayList<Contenedor> getContenedores(){
@@ -44,6 +36,7 @@ public class administradorAlimentos {
 
     public void agregarContenedor(String nombreContenedor){
         validarAdministrador("USTED NO ES ADMINISTRADOR");
+        comparadorNombreContenedor(nombreContenedor, contenedores);
         contenedores.add(new Contenedor(nombreContenedor, this));
     }
     public void borrarContenedor(Contenedor cont){
@@ -56,21 +49,44 @@ public class administradorAlimentos {
     }
 
     public void borrarAlimentosAdministrador(String nombreAlimento){
-        int i;
+        int i, f;
 
         for(i= 0; i< (AlimentosDisponibles.size()); i++){
             if(AlimentosDisponibles.get(i).getNombre().equals(nombreAlimento)){
                 AlimentosDisponibles.remove(i);
             }
+            
+
         }
+        for (Contenedor contenedor : this.contenedores) {
+            for (Alimento alimento : contenedor.getAlimentosDisponibles()) {
+                if(nombreAlimento.equals(alimento.getNombre())){
+                    contenedor.getAlimentosDisponibles().remove(alimento);
+                    return;
+                }
+            }
+        }
+
+        for (Alimento alimento : this.listasPorSemana){
+                if(nombreAlimento.equals(alimento.getNombre())){
+                    this.listasPorSemana.remove(alimento);
+                    return;
+                }
+        }
+
+
+
+
     }
     public void agregarAlimentoAdministrador(Alimento objAlimento){
         if(this.usuarioEnSecion == null) throw new miError("Antes de agregar alimentos al admin inicie secion como admin ");
-        if (this.usuarioEnSecion.getRol().equals("ADMIN")){
-            this.AlimentosDisponibles.add(objAlimento);
-        }else {
-            throw new miError("Para poder agregar alimentos al admin debe ser admin");
-        }
+            if (this.usuarioEnSecion.getRol().equals("ADMIN")){
+                    comparadorNombre(objAlimento);
+                    this.AlimentosDisponibles.add(objAlimento);
+
+            }else {
+                throw new miError("Para poder agregar alimentos al admin debe ser admin");
+           }
     }
 
     public ArrayList<Alimento> getAlimentosDisponibles(){
@@ -88,6 +104,10 @@ public class administradorAlimentos {
     }
     public void eliminarUsuarios(Usuario usuarioA){
         validarAdministrador("NO ES ADMINISTRADOR, NO PUEDE QUITAR USUARIOS ");
+
+        if(usuarioA.getNombre().equals("UsuarioAdmin")){
+            throw new miError("NO SE PUEDE BORRAR AL PRIMER ADMINISTRADOR");
+        }
         boolean seBorroUsuario = this.usuarios.remove(usuarioA);
 
         if(!seBorroUsuario) throw new miError("No se encontro el usuario para borrar");
@@ -165,6 +185,41 @@ public class administradorAlimentos {
             posicionAlimento++;
         }
         return 0;
+    }
+
+    public void comparadorNombre(Alimento objAlimento){
+        int i;
+        String comparador = objAlimento.getNombre().toUpperCase();
+
+            for (i = 0; i < this.AlimentosDisponibles.size(); i++) {
+                String nombreMayus = this.AlimentosDisponibles.get(i).getNombre().toUpperCase();
+                if (nombreMayus.equals(comparador)) {
+                    throw new miError("YA EXISTE UN ALIMENTO CON UN NOMBRE SIMILAR A ESTE");
+                }
+            }
+
+
+    }
+    public void comparadorNombreContenedor(String nombre, ArrayList<Contenedor> contenedores){
+        int i;
+        String comparador = nombre.toUpperCase();
+
+        for (i = 0; i < contenedores.size(); i++) {
+            String nombreMayus = contenedores.get(i).getNombre().toUpperCase();
+            if (nombreMayus.equals(comparador)) {
+                throw new miError("YA EXISTE UN contenedor CON UN NOMBRE SIMILAR A ESTE");
+            }
+        }
+
+
+    }
+    public void iniciarSecion(String nombre){
+        for (Usuario usuario : this.usuarios) {
+            if(usuario.getNombre().equals(nombre)){
+                this.usuarioEnSecion = usuario;
+                return;
+            }
+        }
     }
 
 }

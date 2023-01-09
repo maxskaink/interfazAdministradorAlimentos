@@ -1,10 +1,15 @@
 package code.adminAlimentos;
 
 public class   Administrador  extends Usuario{
-    public Administrador(String nom, int cant, int ed) {
-        super(nom, cant, ed);
 
+    public Administrador(String nombre, int cantidad, int edad) {
+        super(nombre, cantidad, edad);
     }
+
+
+
+    //GIT AND GETTERS
+
     public String getRol(){
         return "ADMIN";
     }
