@@ -16,6 +16,8 @@ public class Usuario {
         this.nombre = nom;
     }
 
+    public ArrayList<Alimento> getAlimentosConsumidos(){ return alimentosConsumidos;}
+
     //GET AND SETTER
     public String getNombre() {
         return nombre;

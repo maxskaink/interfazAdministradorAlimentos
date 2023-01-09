@@ -13,11 +13,19 @@ public class administradorAlimentos {
     private Usuario usuarioEnSecion;
 
     public administradorAlimentos(){
-        this.usuarios.add( new Administrador("Padre",0,99,"admin"));
+        this.usuarios.add( new Administrador("...",0,99));
     }
 
     public void iniciarSecion(int posicionUsuario){
         this.usuarioEnSecion = usuarios.get(posicionUsuario);
+    }
+    public void iniciarSecion(String nombre){
+        for (Usuario usuario : this.usuarios) {
+            if(usuario.getNombre().equals(nombre)){
+                this.usuarioEnSecion = usuario;
+                return;
+            }
+        }
     }
 
     public ArrayList<Contenedor> getContenedores(){

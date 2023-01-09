@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="627.0" style="-fx-background-color: #F2E3D5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.controllers.componenteInicio">
+   <columnConstraints>
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="627.0" minWidth="10.0" prefWidth="179.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="627.0" minWidth="10.0" prefWidth="391.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="627.0" minWidth="10.0" prefWidth="58.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="307.0" minWidth="0.0" prefWidth="0.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="309.0" minHeight="0.0" prefHeight="173.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="386.0" minHeight="0.0" prefHeight="244.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="136.0" minHeight="0.0" prefHeight="28.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <ImageView fitHeight="115.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logoUsuario.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="1">
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+         <children>
+            <Label fx:id="labelSeccionActual12" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" prefHeight="29.0" prefWidth="84.0" style="-fx-background-color: #026773; -fx-background-radius: 12; -fx-border-width: 2; -fx-border-color: #012E40; -fx-border-radius: 10;" text="Nombre" textFill="#f2e3d5" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Kristen ITC" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelNombre" text="nombre 1" />
+            <Label fx:id="labelSeccionActual1" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" prefHeight="29.0" prefWidth="84.0" style="-fx-background-color: #026773; -fx-background-radius: 12; -fx-border-width: 2; -fx-border-color: #012E40; -fx-border-radius: 10;" text="Rol" textFill="#f2e3d5" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Kristen ITC" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelRol" text="Rol" />
+            <Label fx:id="labelSeccionActual11" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" prefHeight="29.0" prefWidth="84.0" style="-fx-background-color: #026773; -fx-background-radius: 12; -fx-border-width: 2; -fx-border-color: #012E40; -fx-border-radius: 10;" text="Edad" textFill="#f2e3d5" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Kristen ITC" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelEdad" text="Edad" />
+         </children>
+      </VBox>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F2E3D5;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <content>
+            <VBox alignment="TOP_CENTER" prefHeight="251.0" prefWidth="376.0" spacing="20.0" style="-fx-background-color: #F2E3D5;">
+               <children>
+                  <VBox fx:id="containerAlimentos" alignment="TOP_CENTER" spacing="8.0">
+                     <children>
+                        <Label text="Comida 1">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <Label fx:id="labelSeccionActual2" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" prefHeight="47.0" prefWidth="201.0" style="-fx-background-color: #3CA6A6; -fx-background-radius: 5; -fx-border-width: 1; -fx-border-color: #012E40; -fx-border-radius: 5;" text="ALimentos" textFill="#f2e3d5" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="1">
+         <font>
+            <Font name="Kristen ITC" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="40.0" />
+         </GridPane.margin>
+      </Label>
+   </children>
+</GridPane>

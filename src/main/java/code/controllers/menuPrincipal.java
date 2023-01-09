@@ -21,7 +21,10 @@ public class menuPrincipal {
     public Text textInfoAccion;
 
     public void initialize() {
+        containerState.getChildren().clear();
         labelSeccionActual.setTextAlignment(TextAlignment.CENTER);
+
+        containerState.getChildren().add( extraerComponente("Inicio") );
     }
     private GridPane extraerComponente(String nombreComponente){
         FXMLLoader loader = (new FXMLLoader(main.class.getResource("componente"+nombreComponente + ".fxml")));
@@ -53,6 +56,7 @@ public class menuPrincipal {
     public void regresarMenuPrincipal(){
         labelSeccionActual.setText("Inicio");
         containerState.getChildren().clear();
+        this.initialize();
     }
 
     public void cerrarSecion() throws IOException {
@@ -64,8 +68,13 @@ public class menuPrincipal {
         labelSeccionActual.setText("Administrador");
 
         containerState.getChildren().add( extraerComponente("AlimentosAdministrador") );
+    }
 
+    public void abrirUsuarios(){
+        containerState.getChildren().clear();
+        labelSeccionActual.setText("Usuarios");
 
+        containerState.getChildren().add( extraerComponente("Usuarios"));
     }
 
     public void infoMenuP(){

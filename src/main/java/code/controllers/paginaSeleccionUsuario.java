@@ -3,6 +3,7 @@ package code.controllers;
 import code.adminAlimentos.Alimento;
 import code.adminAlimentos.Usuario;
 import code.adminAlimentos.administradorAlimentos;
+import code.adminAlimentos.miError;
 import code.main;
 import javafx.application.Application;
 import javafx.fxml.FXML;
@@ -25,24 +26,14 @@ import java.util.Objects;
 
 public class paginaSeleccionUsuario {
 
-    private ArrayList<String> usuarios = new ArrayList<String>();
     @FXML
     public VBox containerUser;
 
     public void initialize(){
-        administradorAlimentos adminApp = main.adminApp;
-
-        for (Usuario usuarioActual : adminApp.getUsuarios()) {
-            usuarios.add(usuarioActual.getNombre());
-        }
 
         containerUser.getChildren().clear();
 
-        int contadorColumnas = usuarios.size()/5;
-        if(contadorColumnas == usuarios.size()/5) contadorColumnas++;
-        int contadorUsuarios=0, seleccionImagen=1;
-
-        for (int contador= 0; contador < contadorColumnas; contador++){
+        int seleccionImagen=1;
 
             HBox filasUsuario = new HBox();
 
@@ -52,7 +43,7 @@ public class paginaSeleccionUsuario {
             filasUsuario.setPadding(new Insets(15));
             filasUsuario.setAlignment(Pos.CENTER);
 
-            while (contadorUsuarios < (contador+1)*5 && contadorUsuarios<usuarios.size()){
+        for (Usuario usuario : main.adminApp.getUsuarios()) {
 
                 VBox contenedorUsuario= new VBox();
                 contenedorUsuario.prefHeight(120);
@@ -61,9 +52,9 @@ public class paginaSeleccionUsuario {
                 contenedorUsuario.setStyle("-fx-background-radius: 20; -fx-background-color: #22BABB; -fx-border-width: 2; -fx-border-color: black; -fx-border-radius: 20;");
                 contenedorUsuario.setPadding(new Insets(5,40,5,40));
 
-                int finalContador = contador;
                 contenedorUsuario.setOnMouseClicked(a -> {
-                    adminApp.iniciarSecion(finalContador);
+
+                        main.adminApp.iniciarSecion(usuario.getNombre());
                     try {
                         main.setRoot("menuPrincipal");
 
@@ -73,12 +64,14 @@ public class paginaSeleccionUsuario {
                         main.adminApp.agregarAlimentoAdministrador(new Alimento("manzana", "fruta", 0));
                         main.adminApp.getContenedores().get(0).agregarAlimento(new Alimento("manzana", "fruta", 15));
 
+                    } catch (miError e) {
+                        System.out.println(e.msg);
                     } catch (IOException e) {
-
+                        throw new RuntimeException(e);
                     }
                 });
 
-                Label nombreUsuario = new Label(usuarios.get(contadorUsuarios));
+                Label nombreUsuario = new Label(usuario.getNombre());
                 nombreUsuario.setTextFill(Color.WHITE);
                 nombreUsuario.setFont(Font.font("Britannic Bold", 26));
                 nombreUsuario.setTextAlignment(TextAlignment.CENTER);
@@ -99,14 +92,8 @@ public class paginaSeleccionUsuario {
 
                 contenedorUsuario.getChildren().addAll(nombreUsuario,imagenUsuario);
                 filasUsuario.getChildren().add(contenedorUsuario);
-
-                contadorUsuarios++;
-            }
-
-            containerUser.getChildren().add(filasUsuario);
-
         }
-
+        containerUser.getChildren().add(filasUsuario);
     }
 
 }

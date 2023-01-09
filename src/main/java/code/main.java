@@ -33,6 +33,7 @@ public class main extends Application {
 
     public static void setRoot(String nombreFXML) throws  IOException{
         paginaPrincipal.setRoot( (new FXMLLoader(main.class.getResource(nombreFXML + ".fxml")).load() ));
+
     }
 
     public static void main(String[] args) {
@@ -42,4 +43,5 @@ public class main extends Application {
 
 //TODO validar los permisos del administrador
 //TODO accion para administrar Usuarios
+//TODO agregar pantalla de manu principal con cosas basicas de usuario
 //TODO accion para administrar la lista por semana y tambien para ver la lista de compra

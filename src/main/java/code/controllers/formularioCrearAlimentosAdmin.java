@@ -25,11 +25,11 @@ public class formularioCrearAlimentosAdmin {
 
         try{
             main.adminApp.agregarAlimentoAdministrador(nuevoAlimento);
+            main.setRoot("menuPrincipal");
         }catch (miError e){
             labelErrores.setText(e.msg);
         }
 
-        main.setRoot("menuPrincipal");
     }
 
 }
