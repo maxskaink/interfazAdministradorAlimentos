@@ -4,6 +4,7 @@ import code.main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -19,13 +20,28 @@ public class menuPrincipal {
     public Pane containerState;
     public Label labelSeccionActual;
     public Text textInfoAccion;
+    public Label menuButton7;
+    public  Label menuButton3;
+    public Label menuButton4;
+    public Label menuButton5;
 
     public void initialize() {
         containerState.getChildren().clear();
         labelSeccionActual.setTextAlignment(TextAlignment.CENTER);
-
         containerState.getChildren().add( extraerComponente("Inicio") );
+
+        cambiarVisibilidadBotonesE(main.adminApp.getUsuarioEnSecion().getRol().equals("ADMIN"));
     }
+
+    public void cambiarVisibilidadBotonesE(boolean estado){
+        menuButton3.setVisible(estado);
+        menuButton7.setVisible(estado);
+        menuButton4.setVisible(estado);
+        menuButton5.setVisible(estado);
+
+    }
+
+
     private GridPane extraerComponente(String nombreComponente){
         FXMLLoader loader = (new FXMLLoader(main.class.getResource("componente"+nombreComponente + ".fxml")));
         try {
@@ -45,6 +61,13 @@ public class menuPrincipal {
 
         containerState.getChildren().add( extraerComponente("AlimentosDisponibles") );
 
+    }
+
+    public void abrirListaSemana(){
+        containerState.getChildren().clear();
+        labelSeccionActual.setText("Lista por semana");
+
+        containerState.getChildren().add( extraerComponente("AlimentosListaSemana"));
     }
     public void abrirContenedores(){
         containerState.getChildren().clear();
@@ -98,6 +121,9 @@ public class menuPrincipal {
     public void infoBoton6(){
         informarAccionBoton(6);
     }
+    public void infoBoton7(){
+        informarAccionBoton(7);
+    }
     private void informarAccionBoton(int buton){
         switch (buton) {
             case 0 -> textInfoAccion.setText("Este boton lo llevara a la seccion menu principal");
@@ -107,6 +133,7 @@ public class menuPrincipal {
             case 4 -> textInfoAccion.setText("Presione para poder agregar o eliminar alimentos del administrador");
             case 5 -> textInfoAccion.setText("Presione para poder agregar,cambiar o eliminar a los usuarios dentro del admonistrador");
             case 6 -> textInfoAccion.setText("Presione para cerrar secion :)");
+            case 7 -> textInfoAccion.setText("Presione para administrar la lista por semana:)");
 
         }
     }

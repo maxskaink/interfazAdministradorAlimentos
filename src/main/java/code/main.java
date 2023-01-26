@@ -41,7 +41,4 @@ public class main extends Application {
     }
 }
 
-//TODO validar los permisos del administrador
-//TODO accion para administrar Usuarios
-//TODO agregar pantalla de manu principal con cosas basicas de usuario
 //TODO accion para administrar la lista por semana y tambien para ver la lista de compra

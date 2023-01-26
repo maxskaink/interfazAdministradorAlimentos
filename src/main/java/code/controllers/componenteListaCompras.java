@@ -1,5 +1,6 @@
 package code.controllers;
 
+import code.main;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -13,20 +14,13 @@ import java.util.ArrayList;
 
 public class componenteListaCompras {
 
-    private ArrayList<String> alimentosDisponibles = new ArrayList<String>();
     @FXML
     public VBox containerAlimentos;
     public void initialize(){
         containerAlimentos.getChildren().clear();
-        alimentosDisponibles.add("Carne");
-        alimentosDisponibles.add("Huevo");
-        alimentosDisponibles.add("Abichuela");
-        alimentosDisponibles.add("Repollo");
-        alimentosDisponibles.add("Espinaca");
-        alimentosDisponibles.add("Aselga");
 
-        alimentosDisponibles.forEach( alimento ->{
-            Label nombreAlimento = new Label(alimento);
+        main.adminApp.consultarListaDeCompras().forEach(alimento ->{
+            Label nombreAlimento = new Label(alimento.getNombre() + "Cantidad -> " + alimento.getCantidad());
 
             nombreAlimento.setAlignment(Pos.CENTER);
             nombreAlimento.setMaxHeight(1.7976931348623157E308);
