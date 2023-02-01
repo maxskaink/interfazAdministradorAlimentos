@@ -61,8 +61,22 @@ public class paginaSeleccionUsuario {
                         //TODO borrar esto
 
                         main.adminApp.agregarContenedor("Nevera");
+                        main.adminApp.agregarContenedor("Cajon cocina");
+                        main.adminApp.agregarContenedor("Estante esquina");
                         main.adminApp.agregarAlimentoAdministrador(new Alimento("manzana", "fruta", 0));
+                        main.adminApp.agregarAlimentoAdministrador(new Alimento("chocolate", "dulce", 0));
+                        main.adminApp.agregarAlimentoAdministrador(new Alimento("Carne de cerdo", "carne", 0));
+                        main.adminApp.agregarAlimentoAdministrador(new Alimento("Cebolla", "Verdura", 0));
+                        main.adminApp.agregarAlimentoAdministrador(new Alimento("Maiz", "Verdura", 0));
+
                         main.adminApp.getContenedores().get(0).agregarAlimento(new Alimento("manzana", "fruta", 15));
+                        main.adminApp.getContenedores().get(0).agregarAlimento(new Alimento("Carne de cerdo", "carne", 5));
+                        main.adminApp.getContenedores().get(2).agregarAlimento(new Alimento("chocolate", "dulce", 15));
+                        //main.adminApp.getContenedores().get(2).agregarAlimento(new Alimento("Maiz", "Verdura", 3));
+
+                        main.adminApp.agregarComidaListaSemana(new Alimento("manzana", "fruta", 5));
+                        main.adminApp.agregarComidaListaSemana(new Alimento("Maiz", "Verdura", 10));
+                        main.adminApp.agregarComidaListaSemana(new Alimento("Carne de cerdo", "carne", 15));
 
                     } catch (miError e) {
                         System.out.println(e.msg);

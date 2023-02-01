@@ -1,5 +1,6 @@
 package code;
 
+import code.adminAlimentos.NIño;
 import code.adminAlimentos.Usuario;
 import code.adminAlimentos.administradorAlimentos;
 import javafx.application.Application;
@@ -18,6 +19,11 @@ public class main extends Application {
     public void start(Stage stage) throws IOException {
         main.stage = stage;
         adminApp = new administradorAlimentos();
+
+        //TODO borrar
+        adminApp.iniciarSecion("UsuarioAdmin");
+        adminApp.añadirUsuario(new Usuario("Miguel", 0 , 18));
+        adminApp.añadirUsuario(new NIño("Santiago",0, 5,3));
 
         paginaPrincipal = cargarFXML("paginaSeleccionUsuario");
 
