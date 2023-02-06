@@ -175,6 +175,22 @@ public class administradorAlimentos {
             }
         }
 
+        boolean alimentoEx = false;
+        for (Alimento alimentoSemana : listasPorSemana) {
+
+            for (Alimento alimentoAgregado : listaCompra) {
+                if( alimentoSemana.getNombre().equals( alimentoAgregado.getNombre() )){
+                    alimentoEx = true;
+                }
+            }
+
+            if(!alimentoEx){
+                listaCompra.add(new Alimento( alimentoSemana.getNombre(), alimentoSemana.getCategoria(), alimentoSemana.getCantidad() ));
+            }
+
+            alimentoEx = false;
+        }
+
         return listaCompra;
     }
     private int existeAlimentoEn(Alimento alimentoConsulta, ArrayList<Alimento> alimentosD){

@@ -20,7 +20,7 @@ public class componenteListaCompras {
         containerAlimentos.getChildren().clear();
 
         main.adminApp.consultarListaDeCompras().forEach(alimento ->{
-            Label nombreAlimento = new Label(alimento.getNombre() + "Cantidad -> " + alimento.getCantidad());
+            Label nombreAlimento = new Label(alimento.getNombre() + " ::Cantidad -> " + alimento.getCantidad());
 
             nombreAlimento.setAlignment(Pos.CENTER);
             nombreAlimento.setMaxHeight(1.7976931348623157E308);
