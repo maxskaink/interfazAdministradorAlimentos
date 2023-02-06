@@ -2,7 +2,7 @@ package code.adminAlimentos;
 
 import java.util.ArrayList;
 
-public class administradorAlimentos {
+public class administradorAlimentos extends herramientas{
 
     private ArrayList<Contenedor> contenedores= new ArrayList<Contenedor>();
     private ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
@@ -193,15 +193,6 @@ public class administradorAlimentos {
 
         return listaCompra;
     }
-    private int existeAlimentoEn(Alimento alimentoConsulta, ArrayList<Alimento> alimentosD){
-        if(alimentosD.size()==0) return 0;
-        int posicionAlimento=1;
-        for (Alimento alimento : alimentosD) {
-            if(alimento.getNombre().equals( alimentoConsulta.getNombre())) return posicionAlimento;
-            posicionAlimento++;
-        }
-        return 0;
-    }
 
     public void comparadorNombre(Alimento objAlimento){
         int i;
@@ -213,19 +204,6 @@ public class administradorAlimentos {
                     throw new miError("YA EXISTE UN ALIMENTO CON UN NOMBRE SIMILAR A ESTE");
                 }
             }
-
-
-    }
-    public void comparadorNombreContenedor(String nombre, ArrayList<Contenedor> contenedores){
-        int i;
-        String comparador = nombre.toUpperCase();
-
-        for (i = 0; i < contenedores.size(); i++) {
-            String nombreMayus = contenedores.get(i).getNombre().toUpperCase();
-            if (nombreMayus.equals(comparador)) {
-                throw new miError("YA EXISTE UN contenedor CON UN NOMBRE SIMILAR A ESTE");
-            }
-        }
 
 
     }
